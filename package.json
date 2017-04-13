@@ -1,0 +1,43 @@
+{
+  "name": "plaidform",
+  "version": "0.1.0",
+  "description": "A webpack/ES6 project template for modern Javascript game development with Pixi",
+  "main": "src/main.js",
+  "dependencies": {
+    "babel-polyfill": "^6.0.16"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^2.0.0",
+    "babel-core": "^6.1.2",
+    "babel-loader": "^6.0.1",
+    "babel-preset-es2015": "^6.1.2",
+    "css-loader": "^0.15.1",
+    "less": "^2.5.1",
+    "less-loader": "^2.2.0",
+    "node-libs-browser": "^0.5.2",
+    "pixi-sound": "^1.4.1",
+    "pixi.js": "^4.5.0",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.10.0",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inductible-dev/plaidform.git"
+  },
+  "scripts": {
+    "serve": "node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "build-debug": "node builder/builder.js --debug",
+    "build-release": "node builder/builder.js --release"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-dev-server",
+    "template",
+    "starter",
+    "es6",
+    "babel"
+  ],
+  "author": "Alan Owen <inductible.dev@gmail.com> & James K Nelson <james@jamesknelson.com>",
+  "license": "MIT"
+}
