@@ -3,8 +3,7 @@ A non-specific harness for modern, cross platform Javascript game development
 
 
 
-# plaidform inherits from:
-# webpack-black-triangle
+# plaidform inherits from webpack-black-triangle
 
 A minimal, development-focussed template to get you up and running with Webpack, Babel & LESS.
 
