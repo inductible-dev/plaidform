@@ -1,0 +1,19 @@
+{
+  "urls": [
+    "./static/assets/audio/common.ogg",
+    "./static/assets/audio/common.m4a",
+    "./static/assets/audio/common.mp3",
+    "./static/assets/audio/common.ac3"
+  ],
+  "sprite": {
+    "silence": [
+      0,
+      5000,
+      true
+    ],
+    "sfx_oo_cough": [
+      6000,
+      301.04308390022715
+    ]
+  }
+}

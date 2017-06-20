@@ -1,48 +1,43 @@
-# plaidform
-A non-specific harness for modern, cross platform Javascript game development
+JSF - Plug-in Media ES6 Javascript framework for game dev
+===
 
+### Install
 
+Navigate to your local repository working copy then:
 
-# plaidform inherits from webpack-black-triangle
-
-A minimal, development-focussed template to get you up and running with Webpack, Babel & LESS.
-
-Read how it works at [jamesknelson.com](http://jamesknelson.com/write-es2015-with-instant-feedback-using-webpack-dev-server-and-babel/).
-
-**Things it does**:
-
-- Makes ES6 "just work"
-- Compiles and includes your LESS files
-- Serves your files
-- Automatically recompiles/reloads your page when JavaScript/LESS files change
-- Decide where your files go (to a degree)
-
-**Things it doesn't do**:
-
-- Handle your deployment build
-- Include any runtime dependencies (other than babel's polyfill)
-
-## Install with three lines
-
-Just `git clone` & `npm install`:
-
-```
-git clone https://github.com/jamesknelson/webpack-black-triangle.git
-cd webpack-black-triangle
+```bash
 npm install
 ```
 
-## Then use it with one more
+### CSS?
 
-Run the dev server:
+CSS files are maintained by writing .less [see http://lesscss.org/] files (in static/assets/css) - these are turned into CSS and bundled into the main.js via webpack, so don't expect to see .css files any place!
 
+### Images?
+
+Image files are maintained by populating the images dir (static/assets/images) [a script mapping working files via an optimisation pipeline into here is forthcoming]...
+
+### Audio?
+
+Audio files are maintained by populating the audio dir (static/assets/audio) [a script mapping working files via an optimisation pipeline into here is forthcoming]...
+
+### Live reload (normal development workflow)
+
+Executes Webpack compilation and live reload functionality: visit http://localhost:8080/webpack-dev-server/index.html
+```bash
+npm run serve
 ```
-npm start
+
+### Production release (for client delivery)
+
+Executes Webpack compilation and static file copy into build-release dir
+```bash
+npm run build-release
 ```
 
-Then open [localhost:8080](http://localhost:8080/).
+### Development release (for internal delivery)
 
-## Why a black triangle?
-
-Because [this](http://rampantgames.com/blog/?p=7745).
-
+Executes Webpack compilation and static file copy into build-debug dir
+```bash
+npm run build-debug
+```

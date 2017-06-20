@@ -1,5 +1,5 @@
 {
-  "name": "plaidform",
+  "name": "JSF",
   "version": "0.1.0",
   "description": "A webpack/ES6 project template for modern Javascript game development with Pixi",
   "main": "src/main.js",
@@ -7,28 +7,40 @@
     "babel-polyfill": "^6.0.16"
   },
   "devDependencies": {
+    "audiosprite": "^0.6.0",
     "autoprefixer-loader": "^2.0.0",
     "babel-core": "^6.1.2",
     "babel-loader": "^6.0.1",
     "babel-preset-es2015": "^6.1.2",
+    "copy": "^0.3.0",
+    "copyfiles": "^1.2.0",
+    "cpy-cli": "^1.0.1",
     "css-loader": "^0.15.1",
+    "del-cli": "^0.2.1",
+    "gsap": "^1.19.1",
+    "imagemin-cli": "^3.0.0",
     "less": "^2.5.1",
     "less-loader": "^2.2.0",
     "node-libs-browser": "^0.5.2",
     "pixi-sound": "^1.4.1",
     "pixi.js": "^4.5.0",
     "style-loader": "^0.12.3",
+    "tinycolor2": "^1.4.1",
     "webpack": "^1.10.0",
-    "webpack-dev-server": "^1.10.1"
+    "webpack-dev-server": "^1.10.1",
+    "worker-loader": "^0.8.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/inductible-dev/plaidform.git"
+    "url": "git@gitlab.pluginmedia.net:pluginmedia/javascript-frameworks.git"
   },
   "scripts": {
+    "update-audiosprites": "del static/assets/audio/common.*; audiosprite -b 64 -s 5 -c 1 -f 'howler' -o ./static/assets/audio/common ./audio-src/common/*.wav",
+    "copy-static": "copyfiles -u 1 'static/*.html' 'static/assets/images/**/*' 'static/assets/audio/**/*'",
     "serve": "node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "build-debug": "node builder/builder.js --debug",
-    "build-release": "node builder/builder.js --release"
+    "serve-lan": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --host 192.168.18.5",
+    "build-debug": "del build-debug/*; NODE_ENV='development' webpack -d --config webpack.config.js --progress --profile --colors; npm run copy-static -- 'build-debug'; imagemin 'build-debug/assets/images/**/*' --out-dir='build-debug/assets/images/'",
+    "build-release": "del build-release/*; NODE_ENV='production' webpack -p --config webpack.config.js --progress --profile --colors; npm run copy-static -- 'build-release'; imagemin 'build-release/assets/images/**/*' --out-dir='build-release/assets/images/'"
   },
   "keywords": [
     "webpack",
@@ -37,7 +49,5 @@
     "starter",
     "es6",
     "babel"
-  ],
-  "author": "Alan Owen <inductible.dev@gmail.com> & James K Nelson <james@jamesknelson.com>",
-  "license": "MIT"
+  ]
 }
