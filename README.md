@@ -1,4 +1,4 @@
-JSF - Plug-in Media ES6 Javascript framework for game dev
+Plaidform - Component-based, Flambe inspired, ES6, Webpack modular Javascript framework for game dev...
 ===
 
 ### Install
@@ -15,7 +15,7 @@ CSS files are maintained by writing .less [see http://lesscss.org/] files (in st
 
 ### Images?
 
-Image files are maintained by populating the images dir (static/assets/images) [a script mapping working files via an optimisation pipeline into here is forthcoming]...
+Image files are maintained by populating the images dir (static/assets/images) [a script mapping working files via an optimisation pipeline exists]...
 
 ### Audio?
 
@@ -41,3 +41,7 @@ Executes Webpack compilation and static file copy into build-debug dir
 ```bash
 npm run build-debug
 ```
+
+### Documentation
+
+Non existent. The Entity/Component system is very close to Flambe however [https://github.com/aduros/flambe]. This project is best understood as being a high level game development framework, utilising Pixi via an entity/component architecture, and a webpack based build pipeline aimed at the agency production environment.
